@@ -51,10 +51,6 @@ const Home = () => {
           <input className='home__input' placeholder='What are you looking for?' id='nameProduct' type="text" />
           <button className='home__btn'><i className='bx bx-search'></i></button>
         </div>
-
-
-
-
         <div className='home__category'>
           <h3 className='home__categoryTitle'>Categories<i className='bx bxs-chevron-down'></i></h3>
           <ul className='home__categoryList'>

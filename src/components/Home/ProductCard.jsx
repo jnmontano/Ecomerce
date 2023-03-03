@@ -4,8 +4,7 @@ import { useNavigate, useNavigation, useNavigationType } from 'react-router-dom'
 import { addProductsCart } from '../../store/slice/cart.slice'
 import "./styles/ProductCard.css"
 
-const ProductCard = ({product}) => {
-  
+const ProductCard = ({product}) => {  
     const navigate = useNavigate()
     
     const dispatch = useDispatch()
@@ -21,7 +20,6 @@ const ProductCard = ({product}) => {
             productId: product.id
         }
         addProductsCart(data)
-        console.log("Add product")
     }
 
     return (
@@ -32,12 +30,13 @@ const ProductCard = ({product}) => {
                 <img src={product.images[1].url} alt="" />
             </div>
         </header>
+
         <section className='productCart__info'>
             <h4 className='productCart__brand'>{product.brand}</h4>
             <h3 className='productCart__title'>{product.title}</h3>
 
-            <h4 className='productCart__price'>Price</h4>
-            <h3 className='productCart__productCart'>$ {product.price}</h3>
+            <h4 className='productCart__priceTitle'>Price</h4>
+            <h3 className='productCart__price'>$ {product.price}</h3>
             <button className='productCart__btn' onClick={handleClickAddProduct}><i className='bx bx-cart'></i></button>
         </section>
     </article>

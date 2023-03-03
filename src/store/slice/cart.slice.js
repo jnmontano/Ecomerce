@@ -37,8 +37,7 @@ export const addProductsCart = (data) => (dispatch) => {
         if(err.response.data?.error === "Product Already "){
             dispatch(setChangeErrorStatus)
             setTimeout(() => {
-                dispatch(setChangeErrorStatus())
-                
+                dispatch(setChangeErrorStatus())                
             },1000)
         }
     });
@@ -46,22 +45,24 @@ export const addProductsCart = (data) => (dispatch) => {
 
 export const deleteProductCart = (id) => (dispatch) => {
     axiosEcomerce
-    .delete(`/cart/${id}`,getConfig())
-    .then((res) => dispatch(getAllCartProducts()))
-    .catch((err) => console.log(err))
-    }
+        .delete(`/cart/${id}`, getConfig())
+        .then((res) => dispatch(getAllCartProducts()))
+        .catch((err) => console.log(err))
+}
 
 export const updateProductCart = (id, data) => (dispatch) => {
-    axiosEcomerce.put(`/cart/${id}`,data,getConfig())
+    axiosEcomerce
+        .put(`/cart/${id}`, data, getConfig())
         .then((res) => dispatch(getAllCartProducts()))
         .catch((err) => console.log(err))
 
 }
 
 export const purchaseCart = () => (dispatch) => {
-    axiosEcomerce.post("/purchases",{}, getConfig())
-    .then((res) => dispatch(setProductsCartGlobal([])))
-    .catch((err) => console.log(err))
+    axiosEcomerce
+        .post("/purchases", {}, getConfig())
+        .then((res) => dispatch(setProductsCartGlobal([])))
+        .catch((err) => console.log(err))
 }
 
 export default cartSlice.reducer
