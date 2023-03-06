@@ -7,7 +7,7 @@ const Notification = () => {
 
   return (
     <article className={`notification ${error ? "active" : "" }`}>
-        <h3 className='notification__text'>This product already added to cart</h3>
+        <h3 className='notification__text'>This product already added your cart </h3>
     </article>
   )
 }

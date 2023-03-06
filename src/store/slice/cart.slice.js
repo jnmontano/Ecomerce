@@ -34,7 +34,7 @@ export const addProductsCart = (data) => (dispatch) => {
     .then((res) => dispatch(getAllCartProducts()))
     .catch((err) => {
         console.log(err)
-        if(err.response.data?.error === "Product Already "){
+        if(err.response.data?.error === "This product already added your cart "){
             dispatch(setChangeErrorStatus)
             setTimeout(() => {
                 dispatch(setChangeErrorStatus())                
